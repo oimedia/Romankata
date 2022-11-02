@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roman numeral convertor</title>
+</head>
+<script src="https://unpkg.com/mustache@latest"></script>
+<script type="text/javascript">
+    function showResult() {
+        var template = document.getElementById('template').innerHTML;
+        var rendered = Mustache.render(template);
+        document.getElementById('target').innerHTML = rendered;
+    }
+
+</script>
+<body onload="showResult()">
+<h2>Roman numeral convertor</h2>
+<h3>Type  a number between 1 and 3999</h3>
+<form action="getRoman" method="get">
+    <label for="numberInput">Number to convert</label>
+    <input type="number" id="numberInput" name="numberInput">
+    <input type="submit" value="convert">
+</form>
+<p id="target"></p>
+<script id="template" type="x-tmpl-mustache">
+     Arabic number is {{input}} <br>
+     Roman number is  {{result}}
+    </script>
+</body>
+</html>
